@@ -1,0 +1,39 @@
+name: Tests de Python
+
+# 1. Las acciones que inician el workflow
+on:
+  push:
+    branches: [ "main" ]
+  # Lo siguiente se ejecutará únicamente cuando se realiza una pull request desde una rama cualquiera a main
+  pull_request:
+    branches: [ "main" ]
+
+# 2. Los trabajos que ejecuta el workflow
+jobs:
+  # En este caso se trata de un único trabajo
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    # Pasos del trabajo:
+    steps:
+    # A. Descargar tu código al servidor de GitHub
+    - name: Clonar el repositorio
+      # Uses hace referencia a que se utiliza un workflow ya creado, en este caso actions/checkout el cual es brindado por github y sirve para clonar repositorios
+      uses: actions/checkout@v4 
+
+    # B. Instalar Python en ese servidor
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.14"
+
+    # C. Instalar tus dependencias 
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # D. Ejecutar tests
+    - name: Ejecutar tests con pytest
+      run: |
+        python -m pytest
