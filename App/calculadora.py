@@ -10,7 +10,7 @@ class Calculadora:
     
     @staticmethod
     def multiplicar(a: int, b: int) -> int:
-        return a * b
+        return a + b
     
     @staticmethod
     def dividir(a:int, b:int) -> float:
