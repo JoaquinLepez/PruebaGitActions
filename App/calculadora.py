@@ -18,7 +18,7 @@ class Calculadora:
     
     @staticmethod
     def potencia(base:int, exponente:int) -> int:
-        # if exponente < 0:
-        #     return None
+        if exponente <= 0:
+            return None
         return base ** exponente
     
