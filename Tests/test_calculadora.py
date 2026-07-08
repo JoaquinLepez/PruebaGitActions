@@ -15,3 +15,11 @@ def test_multiplicar():
 def test_dividir():
     resultado = Calculadora.dividir(2, 3)
     assert round(resultado, 3) == 0.667
+
+def test_potencia():
+    resultado = Calculadora.potencia(3, 4)
+    assert resultado == 81
+
+# def test_potencia_exponente_negativo():
+#     resultado = Calculadora.potencia(3, -3)
+#     assert resultado == None
