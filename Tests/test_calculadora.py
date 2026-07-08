@@ -20,6 +20,6 @@ def test_potencia():
     resultado = Calculadora.potencia(3, 4)
     assert resultado == 81
 
-# def test_potencia_exponente_negativo():
-#     resultado = Calculadora.potencia(3, -3)
-#     assert resultado == None
+def test_potencia_exponente_negativo():
+    resultado = Calculadora.potencia(3, 0)
+    assert resultado == None
