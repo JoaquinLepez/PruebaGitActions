@@ -15,3 +15,10 @@ class Calculadora:
     @staticmethod
     def dividir(a:int, b:int) -> float:
         return a / b
+    
+    @staticmethod
+    def potencia(base:int, exponente:int) -> int:
+        # if exponente < 0:
+        #     return None
+        return base ** exponente
+    
